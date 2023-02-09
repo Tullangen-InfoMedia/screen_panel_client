@@ -7,6 +7,7 @@ Type=simple
 Restart=always
 RestartSec=1
 User=pi
+WorkingDirectory=/home/pi
 ExecStart=/home/pi/screen.exe 194.103.205.35
 
 [Install]
