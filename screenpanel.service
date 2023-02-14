@@ -8,7 +8,7 @@ Restart=always
 RestartSec=1
 User=pi
 WorkingDirectory=/home/pi
-ExecStart=/home/pi/screen.exe 194.103.205.35
+ExecStart=/home/pi/screen.exe 10.19.0.16
 
 [Install]
 WantedBy=multi-user.target
