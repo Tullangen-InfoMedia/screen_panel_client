@@ -34,7 +34,7 @@ void handleCommand(Socket socket, List<String> command) {
 Future<void> reboot() async {
   switch (os) {
     case "windows":
-      await Process.run("shutdown", ["/r"]);
+      await Process.run("shutdown", ["/r", "/t", "0"]);
       break;
     case "linux":
       await Process.run("sudo", ["systemctl", "start", "reboot.target"]);
