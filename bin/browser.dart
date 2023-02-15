@@ -10,7 +10,10 @@ Future<void> launchUrl(String url) async {
       break;
     case "linux":
       await Process.run("killall", ["-9", processName]);
-      await Process.run(browserPath, ["--ignore-certificate-errors", "--aggressive-cache-discard", "--kiosk", "--app=$url"]);
+      final ProcessResult result =
+          await Process.run(browserPath, ["--ignore-certificate-errors", "--aggressive-cache-discard", "--kiosk", "--app=$url"]);
+      print(result.stdout);
+      print(result.stderr);
       break;
   }
 }
