@@ -7,14 +7,19 @@ import 'main.dart';
 void handleCommand(Socket socket, List<String> command) {
   switch (command.first) {
     case "INFO":
+      String? encodedUrl;
+      double scale = 1;
+
       for (final String dataLine in command) {
         if (dataLine.startsWith("URL")) {
-          final String encodedUrl = dataLine.split(":").last;
-          if (encodedUrl.isNotEmpty) {
-            launchUrl(String.fromCharCodes(base64Decode(encodedUrl)));
-          }
-          break;
+          encodedUrl = dataLine.split(":").last;
+        } else if (dataLine.startsWith("SCALE")) {
+          scale = double.tryParse(dataLine.split(":").last) ?? scale;
         }
+      }
+
+      if (encodedUrl != null && encodedUrl.isNotEmpty) {
+        launchUrl(String.fromCharCodes(base64Decode(encodedUrl)), scale);
       }
 
       break;
