@@ -25,11 +25,16 @@ Future<void> connect() async {
         handleCommand(socket, command.split("\n"));
       },
       onError: (error) {
-        print("Error: $error");
+        print("Error (1): $error");
       },
       onDone: () {
         print("Connection lost");
-        socket.destroy();
+
+        try {
+          socket.destroy();
+        } catch (e) {
+          print("Could not destroy socket: $e");
+        }
 
         Future.delayed(const Duration(seconds: 10)).then((_) => connect());
       },
@@ -47,12 +52,17 @@ Future<void> connect() async {
 
     Future.delayed(const Duration(seconds: 15)).then((_) => sendLiveRequest());
   } catch (e) {
-    print("Error: $e");
+    print("Error (2): $e");
     Future.delayed(const Duration(seconds: 10)).then((_) => connect());
   }
 }
 
 void main(List<String> arguments) async {
+  if (arguments.isEmpty) {
+    print("No IP specified");
+    exit(1);
+  }
+
   ip = arguments.first;
 
   final File configFile = File("screen.config.json");
