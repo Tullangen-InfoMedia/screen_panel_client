@@ -1,1 +1,1 @@
-dart compile exe bin/main.dart -o screen.exe
+dart compile exe bin/main.dart -o screenpanel-windows/panel.exe
