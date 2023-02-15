@@ -12,7 +12,9 @@ Future<void> launchUrl(String url, double scale) async {
     "--app=$url"
   ];
 
-  print(browserArgs);
+  for (final String arg in browserArgs) {
+    print(arg);
+  }
 
   switch (os) {
     case "windows":
