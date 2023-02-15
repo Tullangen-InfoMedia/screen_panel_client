@@ -1,8 +1,11 @@
 [Unit]
 Description=ScreenPanel
-After=network.target
+Requires=graphical.target
+After=graphical.target
 StartLimitIntervalSec=0
 [Service]
+Environment=DISPLAY=:0.0
+Environment=XAUTHORITY=/home/pi/.Xauthority
 Type=simple
 Restart=always
 RestartSec=1
@@ -11,4 +14,4 @@ WorkingDirectory=/home/pi
 ExecStart=/home/pi/screen.exe 10.19.0.16
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=graphical.target
