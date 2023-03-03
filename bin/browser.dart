@@ -27,5 +27,10 @@ Future<void> launchUrl(String url, double scale) async {
       final ProcessResult result = await Process.run(browserPath, browserArgs);
       print(result.stderr);
       break;
+    case "macos":
+      await Process.run("killall", ["-9", processName]);
+      final ProcessResult result = await Process.run(browserPath, browserArgs);
+      print(result.stderr);
+      break;
   }
 }
