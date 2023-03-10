@@ -1,6 +1,6 @@
 {
 	"Key": "",
-	"BrowserPath": "/usr/lib/chromium-browser/chromium-browser-v7",
-	"ProcessName": "/usr/lib/chromium-browser/chromium-browser-v7",
+	"BrowserPath": "/usr/lib/chromium-browser/chromium-browser",
+	"ProcessName": "/usr/lib/chromium-browser/chromium-browser",
 	"OS": "linux"
 }
