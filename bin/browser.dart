@@ -6,6 +6,7 @@ Future<void> launchUrl(String url, double scale) async {
   final List<String> browserArgs = [
     "--ignore-certificate-errors",
     "--aggressive-cache-discard",
+    "--disk-cache-dir=${os == "windows" ? "NUL" : "/dev/null"}",
     "--device-scale-factor=$scale",
     "--force-device-scale-factor=$scale",
     "--kiosk",
