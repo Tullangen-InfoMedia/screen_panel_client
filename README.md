@@ -11,3 +11,5 @@ Kom ihåg att RPI:n måste vara kopplad till nätverket via kabel för att nå s
    Stoppa tjänsten med: ``sudo systemctl stop screenpanel``
    
    Se status för tjänsten med: ``sudo systemctl status screenpanel``
+
+6. För att stänga av skärmsläckaren (screen blanking) kör du ``sudo raspi-config`` i terminalen. Välj sedan Display Options -> Screen Blanking.
