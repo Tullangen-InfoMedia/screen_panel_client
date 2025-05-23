@@ -1,0 +1,4 @@
+Öppna filsökaren och välj filen lib. Navigera till den fil som startar webbläsaren som ska användas (vanligtvis chromium). Testa att gå in i mappen chromium. Tryck därefter på filen chromium och välj execute i prompten som visas. Om webbläsaren startar så ska BrowserPath och ProcessName i config-filen  ersättas med usr/lib/chromium/chromium
+Om filen chromium ej finns eller fungerar så ska du söka fram den fil som startar din webbläsare i lib mappen (Exempel på andra mappnamn som du kan leta i är: chromium-browser) . Ändra BrowserPath och ProcessName i config-filen enligt mallen: usr/lib/MappNamn/FilNamn
+Endast MappNamn & FilNamn i mallen ska bytas ut till det som startar din webbläsare!
+Observera att dessa instruktioner utgår från att du konfigurerat Raspberry pi:n som standardanvändare eller enligt Mats mall.
