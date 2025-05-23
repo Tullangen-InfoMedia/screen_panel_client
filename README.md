@@ -6,7 +6,7 @@ Kom ihåg att RPI:n måste vara kopplad till nätverket via kabel för att nå s
 
    Öppnas webbläsaren kan du gå vidare till steg 5 utan att göra några ändringar.
    
-   Öppnas inte webbläsaren behöver du följa instruktionerna i FilVagar.txt för att uppdatera BrowserPath & ProcessName.
+   Öppnas inte webbläsaren behöver du följa instruktionerna i "FilVagar.txt" för att uppdatera BrowserPath & ProcessName.
    
 5. Döp om den .exe-fil som matchar din dators processor till ``panel.exe`` (32-bit är ARMv7, 64-bit är ARMv8 oftast (PI 4+ är 64-bit).
 6. Kör ``setup.sh`` via terminalen ``sudo bash setup.sh`` i mappen.
